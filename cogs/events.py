@@ -234,12 +234,12 @@ class Events(commands.Cog):
                 allowed_mentions=discord.AllowedMentions(everyone=True))
 
         # Kick members that post messages with multiple images in multiple channels
-        if len(message.attachments) > 1:
+        if len(message.attachments) > 2:
             if message.author.id not in self.userbot_yeeter:
                 self.userbot_yeeter[message.author.id] = []
             if message.channel not in self.userbot_yeeter[message.author.id]:
                 self.userbot_yeeter[message.author.id].append(message.channel)
-                if len(self.userbot_yeeter[message.author.id]) == 3:
+                if len(self.userbot_yeeter[message.author.id]) == 2:
                     if isinstance(message.author, discord.Member):
                         msg = (
                             "You have been kicked from Nintendo Homebrew for suspicious behavior in multiple channels. "
